@@ -1,0 +1,54 @@
+{
+    "name": "mahi-mahi/email-log",
+    "description": "Log all sent emails to database",
+    "keywords": [
+        "mahi-mahi",
+        "email-log"
+    ],
+    "homepage": "https://github.com/mahi-mahi/email-log",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "olivM",
+            "email": "olivier.mourlevat@bronx.fr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/support": "^7.0 || ^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MahiMahi\\EmailLog\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MahiMahi\\EmailLog\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MahiMahi\\EmailLog\\EmailLogServiceProvider"
+            ],
+            "aliases": {
+                "EmailLog": "MahiMahi\\EmailLog\\EmailLogFacade"
+            }
+        }
+    }
+}
